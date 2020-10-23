@@ -1,0 +1,27 @@
+
+
+
+    <section class="container">
+        <section class="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3">
+                <h2 class="modal-title w-105 mb-20 font-weight-bold">Share Screen</h2>
+                <br>
+                <form [formGroup]="userForm" (ngSubmit) = "loginUser()" >
+                  <div class="form-group">
+                    
+                    <input type="text" class="form-control" formControlName="linkname" required  [(ngModel)]="linkname" placeholder="Enter sharing key or meeting ID"><br>
+                    <span class="text-danger"
+                    *ngIf="(userFormControl.linkname.touched ) && userFormControl.linkname.errors?.required">
+                    Enter sharing key or meeting ID
+                    </span>
+                  </div>
+        <br>
+        <button type="submit" class="btn btn-primary  float-right">cancel</button>
+        <button type="submit" class="btn btn-primary  "style='margin-left:100px'>share</button> 
+       
+      </form>
+      </section>
+        </section>
+        </section>
+     
+       

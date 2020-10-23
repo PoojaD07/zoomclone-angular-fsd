@@ -1,0 +1,47 @@
+
+
+  
+  <section class="container">
+      <section class="row justify-content-center">
+          <section class="col-12 col-sm-6 col-md-3">
+              <h2 class="modal-title w-105 mb-20 font-weight-bold">Sign Up</h2>
+              <br>
+              <form [formGroup]="userForm" (ngSubmit) = "loginUser(userForm.value)" >
+                <div class="form-group" >
+        <input type="text" class="form-control"  formControlName="fname" required  [(ngModel)]="fname" placeholder="First Name"><br>
+        <span class="text-danger"
+        *ngIf="(userFormControl.fname.touched ) && userFormControl.fname.errors?.required">
+       First Name is required
+         </span>
+                </div>
+                <div class="form-group" >
+                <input type="text" class="form-control"  formControlName="lname" required  [(ngModel)]="lname" placeholder="Last Name"><br>
+                <span class="text-danger"
+                *ngIf="(userFormControl.lname.touched ) && userFormControl.lname.errors?.required">
+               Last Name is required
+                 </span>
+                </div>     
+  
+                <div class="form-group" >
+                  <input type="mail" class="form-control" formControlName="mail" required  [(ngModel)]="mail" placeholder="Enter email" ><br>
+                  <span class="text-danger"
+                  *ngIf="(userFormControl.mail.touched ) && userFormControl.mail.errors?.required">
+                  Email Id is required
+                   </span>
+                   <span class="text-danger"
+                   *ngIf="userFormControl.mail.touched && userFormControl.mail.errors?.email">
+                   Enter a valid email address
+                   </span>
+                          </div>
+      
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="userFormControl.fname.invalid||userFormControl.lname.invalid||userFormControl.mail.invalid">Verify</button>
+</form>
+    </section>
+      </section>
+      </section>
+  
+
+  
+  
+  
+  

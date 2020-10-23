@@ -1,0 +1,14 @@
+
+     <div class="msg_history">
+    
+            <li class="limsgList" style="list-style-type:none" *ngFor="let x of msgList" [ngClass]="{'incoming_msg': x.origin != 'me', 'outgoing_msg': x.origin == 'me'}">
+                   <small style="text-align: left; font-weight: bold ;font-family: cursive;">{{x.user}} :</small>
+                   <p>{{x.msg}}</p>
+  <!--                  <small>{{x.date }}</small> -->
+             </li> 
+     </div>
+
+    <div class="input_msg_write">
+        <input type="text" placeholder="Type a message" [(ngModel)]="msg" name='msg' (keydown.enter)="sendMessage()">
+        <button  type="button"  (click) ="sendMessage()"  ><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+    </div>

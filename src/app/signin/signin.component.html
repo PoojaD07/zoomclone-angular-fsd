@@ -1,0 +1,49 @@
+<div class="row" style="margin: auto;">
+  <div class="column" >
+       <h2> Sign In</h2>
+    <br>
+    <form  [formGroup]="userForm" (ngSubmit)="loginUser()">
+      <div class="form-group">
+        <input type="mail" class="form-control" formControlName="mail" required [(ngModel)]="mail"
+          placeholder="Enter your email"><br>
+        <span class="text-danger" *ngIf="(userFormControl.mail.touched ) && userFormControl.mail.errors?.required">
+          Email Id is required
+        </span>
+        <span class="text-danger" *ngIf="userFormControl.mail.touched && userFormControl.mail.errors?.email">
+          Enter a valid email address
+        </span>
+      </div>
+      <br>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" formControlName="password" required [(ngModel)]="password"
+            placeholder="Enter your password"> <br>
+
+          <div class="input-group-append">
+            <button class="input-button" style="border: none;font-style: italic;" a routerLink="/forgot">forgot?</button>
+          </div>
+        </div>
+        <span class="text-danger"
+          *ngIf="(userFormControl.password.touched ) && userFormControl.password.errors?.required">
+          Password is required
+        </span>
+        <br>
+        <span class="text-danger"
+          *ngIf="userFormControl.password.touched && userFormControl.password.errors?.invalidPassword">
+          Enter alpha numeric Password
+        </span>
+      </div>
+      <br>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" [checked]="exampleCheck1" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Keep me signed in</label>
+        <button type="submit" class="btn btn-primary  float-right"
+          [disabled]="userFormControl.mail.invalid||userFormControl.password.invalid">Sign In</button>
+      </div>
+      <br>
+    </form>
+  </div>
+   <div class="column"  >
+     <p class ="verticleLine" style="padding-top: 150px; padding-left: 50px;"><a href="/signup">Sign Up </a> with Fujitsu details</p>
+  </div>
+</div>

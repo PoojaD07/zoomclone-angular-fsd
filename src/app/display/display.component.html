@@ -1,0 +1,47 @@
+<ul class="meeting-info">
+    <li><strong>Meeting Topic:</strong> {{name}}'s Personal Meeting Room </li>
+    <li><strong>Host:</strong> {{name}}</li>
+    <li><strong>Participant ID:</strong>{{room}}</li>
+ </ul>
+ 
+<video id="screen" autoplay></video>
+
+<div class="main-Video" 
+style="width: 20% !important;
+height: 300px !important;
+display: inline-flex;
+border: 1px solid; color:white" 
+id="video-Container"></div>
+
+
+<div class="img-container">
+    <div class="footer">
+       <ul class="list-unstyled list-inline mt-3">
+          <li class="list-inline-item" (click)="changeType(toggle1)">
+            <span class="videoBtn" style="padding-top: 10px; "><i [ngClass]="toggle1 ? 'fa fa-microphone-slash fa-lg' : 'fa fa-microphone fa-lg'" ><br> <br>Mute</i></span>
+          </li> 
+          <li class="list-inline-item"  (click)="changeVideo(toggle2)" style="padding-right: 200px;  padding-left: 30px;">
+            <span class="videoBtn" style="padding-top: 10px;"><i [ngClass]="toggle2 ? 'fa fa-play fa-lg' : 'fa fa-video-camera fa-lg'"><br><br> Video</i></span>
+           </li>        
+          <li class="list-inline-item">
+              <i class="fa fa-shield  pull-right fa-lg"  style="padding-right:35px;"><br><br>Security</i>
+          </li>
+          <li class="list-inline-item">
+              <i class="fa fa-user-plus pull-right fa-lg" style="padding-right:35px;"><br><br>Participants</i>
+          </li>
+          <li class="list-inline-item">
+              <button class="videoBtn"  (click)="openDialog()"><br><i class="fa fa-folder fa-lg "style="padding-right:35px;" ><br><br>Chat</i></button>
+          </li>
+          <li class="list-inline-item ">
+              <button class="videoBtn" (click)="shareScreen()"><i class="fa fa-desktop pull-right fa-lg" style="padding-right:20px;"><br><br>Share Screen</i></button>
+          </li>
+          <li class="list-inline-item ">
+              <button class="videoBtn" (click)="openInviteDialog()"><i class="fa fa-group pull-right fa-lg" style="padding-right:35px; color: white;"><br><br>Invite People</i></button>
+          </li>
+          <li class="button pull-right">
+              <br>
+              <button (click)="endMeeting()" class="btn btn-danger"><b>End Meeting</b></button>
+          </li>
+      </ul>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Meeting History</h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Peer Mail</th>
+          <th>Meeting Id</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of peermail">
+          <td >{{x.peermail}}</td>
+          <td >{{x.meetid}}</td>
+          <td >{{x.date}}</td>
+        </tr>
+       </tbody>
+    </table>
+    <div mat-dialog-actions >
+        <button type="submit" class="btn btn-primary  float-right" (click)="closeDialog()" >Cancel</button>
+     </div>
+  </div>
+ 

@@ -1,0 +1,239 @@
+<div class="container mt-3">
+
+    <div class="row">
+
+        <div class="col-md-12 ">
+
+            <div class="well-block">
+
+                <div class="well-title">
+
+                    <h2><b>Schedule Meeting</b></h2>
+
+                </div>
+
+                <form [formGroup]="userForm"(ngSubmit)="onSubmit(userForm.value)" >
+
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+
+                                <label class="control-label1" for="topic"><b>Topic</b></label>
+
+                                <input type="topic" textarea style="width:180%;" class="form-control form-rounded" formControlName="topic"required  [(ngModel)]="topic" placeholder="Topic" ><br>
+                                <span class="text-danger"
+                                *ngIf="(userFormControl.topic.touched ) && userFormControl.topic.errors?.required">
+                                 Topic is required
+                                 </span>
+                            </div>
+
+                        </div> 
+
+                        <div class="col-md-6">
+
+                          <div class="form-group">
+
+                              <label class="control-label" for="peermail">Email</label>
+
+                              <input type="mail" textarea style="width:180%;" class="form-control" formControlName="peermail" required  [(ngModel)]="peermail" placeholder="Enter email" ><br>
+
+                <span class="text-danger"
+
+                *ngIf="(userFormControl.peermail.touched ) && userFormControl.peermail.errors?.required">
+
+                Email Id is required
+
+                 </span>
+
+                 <!-- <span class="text-danger"
+
+                 *ngIf="userFormControl.peermail.touched && userFormControl.peermail.errors?.email">
+
+                 Enter a valid email address
+
+                 </span> -->
+
+                          </div>
+
+                      </div>
+
+                                                
+
+                        <div class="row">
+
+                         <div class="form-group" style="padding-top: 10px;">
+                                      
+                          <div class="col-md-12">
+                            <div class="form-group">
+                               &nbsp;&nbsp;&nbsp; <label class="control-label" for="date"><b>Preferred Date</b></label>
+                             
+                                <div class="input-group">
+                                 
+                                  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <input class="form-control" placeholder="yyyy-mm-dd" formControlName="model"
+                       name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                       
+                <div class="input-group-append">
+                  <button class="btn btn-outline-primary calendar" (click)="d.toggle()" type="button"></button>
+                </div>
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                       
+                         <div class="col-md-6">  
+                          <div class="form-group">
+                           
+                              <ngb-timepicker   [(ngModel)]="time" formControlName="time" [meridian]="meridian"></ngb-timepicker>
+                              <button class="btn btn-sm btn-outline-" (click)="toggleMeridian()">
+                               
+                              </button>
+                            </div>
+                              </div> 
+                         
+
+ 
+
+                        </div>
+
+                       <hr>
+
+                       
+
+                        <br>
+
+                        <br>
+
+  
+
+                       <div class="form-group">
+
+                          <label class="control-label" for="meeting"><b>MeetingID</b></label><br>
+
+                          <label class="form-check form-check-inline">
+
+                        <input class="form-check-input" type="radio" name="meeting" value="1"formControlName="meeting"  [checked]="true">
+
+                        <span class="form-check-label"> Generate automatically </span>
+
+                          </label>
+
+                         <label class="form-check form-check-inline">
+
+                        <input class="form-check-input" type="radio" name="meeting" value="2"formControlName="meeting"  >
+
+                        <span class="form-check-label"> Personal Meeting Id</span>
+
+                      </label>
+
+                  </div>
+
+                  <hr>
+
+                   <div class="form-group">
+
+                    <label class="control-label" for="meeting"><b>Video</b></label><br>
+
+                    <label class="form-check form-check-inline">
+
+                  <input class="form-check-input" type="radio" name="video" value="1"formControlName="video"  [checked]="true">
+
+                  <span class="form-check-label"> On </span>
+
+                </label>
+
+                
+
+                <label class="form-check form-check-inline">
+
+                  <input class="form-check-input" type="radio" name="video" value="2"formControlName="video"  >
+
+                  <span class="form-check-label"> Off</span>
+
+                </label>
+
+            </div>
+
+                  
+
+               
+  
+
+                  
+
+  
+
+                 
+
+                  <hr>
+
+                  <div class="form-check"><br>
+
+                    <label class="control-label" for="optradio"><b>Advance options</b></label><br>
+
+                    <input type="checkbox" class="form-check-input"  id="exampleCheck1" >
+
+                  
+
+                    <label class="form-check-label" for="exampleCheck1">Enable Waiting Room</label><br>
+
+                    
+
+                    <input type="checkbox" class="form-check-input" id="exampleCheck2" >
+
+                    
+
+                    <label class="form-check-label" for="exampleCheck2">Enable join before host</label><br>
+
+                    
+
+                    <input type="checkbox" class="form-check-input"  id="exampleCheck3" >
+
+                    
+
+                    <label class="form-check-label" for="exampleCheck3">Mute participants upon entry</label><br>
+
+                    <input type="checkbox" class="form-check-input"  id="exampleCheck3" >
+
+                    
+
+                    <label class="form-check-label" for="exampleCheck4">Automatically record meeting on the local computer</label>
+
+                  
+
+                  
+
+                  </div>
+
+                  <br>
+
+  
+
+                        <!-- Button -->
+
+                        <div class="col-md-12">
+
+                            <div class="form-group pull-right">
+
+                                <button id="singlebutton" name="singlebutton"  [disabled]="userFormControl.topic.invalid||userFormControl.peermail.invalid" class="btn btn-primary "><b>Schedule</b></button>&nbsp;
+
+                                <button id="singlebutton" name="singlebutton" class="btn btn-outline-secondary form-rounded" a routerLink="/welcome"><b>Cancel</b></button>
+
+                            </div>
+
+                        </div>
+
+                   
+
+                </form>
+
+                <!-- form end -->
+
+            </div>
+
+        </div>
+
+
+        

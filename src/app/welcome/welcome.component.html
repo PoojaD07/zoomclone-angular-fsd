@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <!-- <button class="navbar-toggler"data-toggle="collapse"data-target="#collapse_target">
+    <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div>
+        <h3>
+        Logged In as : <strong>{{ currentUser.name }}</strong> 
+      </h3>
+     </div>
+    <div style="padding-right: 100px;"class="collapse navbar-collapse"id="collapse_target">
+    <ul class="navbar-nav mx-auto">
+    <li class="nav-item text-center">
+    <a href="/welcome" class="nav-link active"><i class="fa fa-home fa-2x"><span></span></i><br>Home</a>
+    </li>&nbsp;&nbsp;&nbsp;&nbsp;
+    <li class="nav-item text-center">
+    <a (click)="openDialog()" class="nav-link active" style="padding-right: 100px;"><i class="fa fa-history fa-2x"><span></span></i><br>Meetings</a>
+    </li>
+    </ul>
+    <button (click)="openConfirmationDialog()" type="button" class="signOut" title="Sign Out!" class="btn btn-danger"><i class="fa fa-sign-out fa-lg" ></i></button>
+
+  
+    
+    </div>
+ </nav> 
+ 
+
+    <div class="wrapper">
+        <div class="letter">
+            <a (click)="joinMeet()">
+                <img src="../../assets/New-meeting_img.png"alt=""style="width: 110px;height: 110px;"><br> 
+                <a style="text-align: center; color: #007BFF;" > New meeting</a>
+             </a>
+        </div>
+        <div class="letter">
+             <a href="/joinmeeting">
+                 <img src="../../assets/join_meeting_img.png"alt=""style="width: 110px;height: 110px;"><br>
+                 <a style="text-align: center;"> Join Meeting </a>
+             </a>
+        </div>
+        <div class="letter">
+            <a href="/schedulemeeting">
+                 <img src="../../assets/shedule_img.png"alt=""style="width: 110px;height: 110px;"><br> 
+                 <a style="text-align: center;">Schedule</a>
+            </a>
+        </div>
+        <div class="letter">
+            <a href="/share" >
+                <img src="../../assets/share_screen_img.jpg"alt=""style="width: 110px;height: 105px;"><br>
+                  <a style="text-align: center;">Share Screen</a>
+             </a>
+            
+        </div>
+   </div>

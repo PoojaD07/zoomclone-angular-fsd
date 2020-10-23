@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+    
+
+@import"~bootstrap/dist/css/bootstrap.css";
+@import"~font-awesome/css/font-awesome.css"; 
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.my-centered-dialog .mat-dialog-container {
+     
+    position: fixed;
+
+    /* set position */
+    bottom: 20px;
+    right: 30px;
+
+    /* must have dimension */
+    width: 350px;
+    height: 600px;
+    overflow-y: scroll;
+      
+    }
+ 
+    .my-dialog-history.mat-dialog-container{
+
+           
+    position: fixed;
+
+    /* set position */
+  
+   
+    /* must have dimension */
+    width: 850px;
+    height: 800px;
+    overflow-y: scroll;
+    }

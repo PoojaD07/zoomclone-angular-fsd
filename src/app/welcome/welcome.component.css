@@ -1,0 +1,68 @@
+.img-container{
+
+    text-align: center;
+    margin-left: 400px;
+    padding-top: 200px;
+    justify-content: center
+    }
+    .img-container img {
+    width:100px;
+    height:100px;
+    
+    
+    }
+ 
+    .fa.fa-home{
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color:grey;
+      }
+      .fa-home:hover {
+        color: #007BFF
+    }
+
+  .signOut:hover {
+    border: 0.2px solid #888;
+   
+  }
+
+    .fa.fa-history{
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color:grey;
+      }
+      .fa-history:hover {
+        color: #007BFF
+    }
+ 
+
+    body,html {
+        padding: 0;
+        margin: 0;
+      }
+      
+      .wrapper {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding-top: 200px;
+        grid-template-columns: 200px 200px;
+        grid-column-gap: 55px;
+        grid-row-gap: 75px;
+      
+      }
+      
+      .letter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: white;
+        line-height: 1;
+        font-family: 'hobeaux-rococeaux-background', Helvetica;
+        font-weight: 50;
+        cursor: pointer;
+        transition: all .3s ease;
+      }
+
+      

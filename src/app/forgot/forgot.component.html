@@ -1,0 +1,31 @@
+
+  <section class="container">
+      <section class="row justify-content-center">
+          <section class="col-12 col-sm-6 col-md-3">
+              <h2 class="modal-title w-105 mb-20 font-weight-bold">forgot</h2>
+      
+        
+          
+              <form [formGroup]="userForm" (ngSubmit) = "forgotUser()" >
+                <div class="form-group" >
+        <input type="mail" class="form-control" formControlName="mail" required  [(ngModel)]="mail" placeholder="Enter email" ><br>
+        <span class="text-danger"
+        *ngIf="(userFormControl.mail.touched ) && userFormControl.mail.errors?.required">
+        Email Id is required
+         </span>
+         <span class="text-danger"
+         *ngIf="userFormControl.mail.touched && userFormControl.mail.errors?.email">
+         Enter a valid email address
+         </span>
+                </div>
+  <br>
+      
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="userFormControl.mail.invalid">Continue</button>
+              </form>
+    </section>
+      </section>
+      </section>
+
+  
+       
+
